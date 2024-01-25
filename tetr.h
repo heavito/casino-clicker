@@ -39,6 +39,8 @@ namespace tetrishea {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::PageSetupDialog^ pageSetupDialog1;
+	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 	protected:
 
 	private:
@@ -57,9 +59,11 @@ namespace tetrishea {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(tetr::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pageSetupDialog1 = (gcnew System::Windows::Forms::PageSetupDialog());
+			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -87,25 +91,6 @@ namespace tetrishea {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &tetr::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(476, 428);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(111, 69);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(475, 503);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(112, 69);
-			this->button3->TabIndex = 3;
-			this->button3->Text = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &tetr::button3_Click);
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -118,6 +103,27 @@ namespace tetrishea {
 			this->label1->Text = L"íà÷àëîñü!";
 			this->label1->Visible = false;
 			this->label1->Click += gcnew System::EventHandler(this, &tetr::label1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(20, 12);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(111, 69);
+			this->button2->TabIndex = 2;
+			this->button2->Text = L"Íàçàä";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Visible = false;
+			this->button2->Click += gcnew System::EventHandler(this, &tetr::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(385, 440);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(300, 78);
+			this->button3->TabIndex = 3;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &tetr::button3_Click);
 			// 
 			// tetr
 			// 
@@ -139,11 +145,13 @@ namespace tetrishea {
 		}
 #pragma endregion
 	public:
-		int exit = 0;
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		exit = 1;
+
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { // ÈÃÐÀ
 		this->label1->Visible = true;
-		
+		System::String^ imagePath = "re/gavnoed.png";
+		panel1->BackgroundImage = System::Drawing::Image::FromFile(imagePath);
+		this->button1->Visible = false;
+		this->button2->Visible = true;
 	}
 	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
@@ -151,7 +159,17 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void tetr_Load(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) { // ÍÀÑÒÐÎÉÊÈ
+	this->button1->Visible = false;
+	this->button3->Visible = false;
+	this->button2->Visible = true;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) { // ÃËÀÂÍÎÅ ÌÅÍÞ
+	System::String^ imagePath = "re/fon.png";
+	panel1->BackgroundImage = System::Drawing::Image::FromFile(imagePath);
+	this->button2->Visible = false;
+	this->button1->Visible = true;
+	this->button3->Visible = true;
 }
 };
 }

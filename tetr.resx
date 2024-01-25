@@ -121,7 +121,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDgAAALQCAIAAAD6tVcNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF483QVUG9v3MGza2xbX6Ewm7i5ESUKE4O7uLoUWh6JtaYtWaUsLLRXq
+        vAAADrwBlbxySQAA/7JJREFUeF483QVUG9v3MGza2xbX6Ewm7i5ESUKE4O7uLoUWh6JtaYtWaUsLLRXq
         7u7ucuvufv3eGpBvht///br2OutkMoRAIZmHvfc5NpPs7JwcXRwcHO0cHF0hV5wEBXji0GIPQI8CDTiM
         EcRaIMCHQLCANDORayEDHAeAinMBiDa2LBtHko0T2cYBsnEgIKMd3sYeHG9Phkcbu/8/ABt7AnzXOPig
         LQ45Bz4IH3Eg2thD4+wJ4x3J4x3AcY74Cc6Aoyvo5Eqwd4Mc4NEFb+uEdkejMSgPPNoNj3Wkk9xxeCca
@@ -36258,6 +36258,12 @@
         EFAEEopAWJhZRZpVVhhDYGAmsLESuZjYOJiIRFoujv8DcCfLzwnoeP4AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="pageSetupDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>167, 17</value>
+  </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
